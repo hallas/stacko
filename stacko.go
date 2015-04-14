@@ -111,8 +111,7 @@ func FunctionInfo(pc uintptr) (string, string) {
 	}
 
 	info := name[slash:]
-	dot := strings.LastIndex(info, ".")
-
+	dot := strings.Index(info, ".")
 	return info[:dot], info[dot+1:]
 }
 
