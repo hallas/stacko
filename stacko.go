@@ -110,7 +110,12 @@ func FunctionInfo(pc uintptr) (string, string) {
 
 	info := name[slash:]
 	dot := strings.Index(info, ".")
-	return info[:dot], info[dot+1:]
+
+	if dot > -1 {
+		return info[:dot], info[dot+1:]
+	}
+
+	return "", info
 }
 
 // ContextInfo takes a path and a line number and returns a slice of strings
