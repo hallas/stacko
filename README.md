@@ -1,10 +1,6 @@
-# Stacko
+# stacko [![Build Status](https://travis-ci.org/hallas/stacko.svg?branch=master)](https://travis-ci.org/hallas/stacko) [![GoDoc](https://godoc.org/github.com/hallas/stacko?status.svg)](https://godoc.org/github.com/hallas/stacko) [![Tips](https://img.shields.io/gratipay/hallas.svg)](https://gratipay.com/hallas)
 
-[![Build Status](https://travis-ci.org/hallas/stacko.svg?branch=master)](https://travis-ci.org/hallas/stacko)
-[![GoDoc](https://godoc.org/github.com/hallas/stacko?status.svg)](https://godoc.org/github.com/hallas/stacko)
-[![Tips](https://img.shields.io/gratipay/hallas.svg)](https://gratipay.com/hallas)
-
-The Stacko project generates a structured stacktrace for your Go programming
+The Stacko project generates structured stacktraces for your Go programming
 needs.
 
 The general form of a frame is as seen below.
