@@ -10,7 +10,6 @@ import (
 // of the stacktrace is correct, this should gives us a stacktrace of 4 frames.
 func TestNewStacktrace(t *testing.T) {
 	stacktrace, err := NewStacktrace(0)
-	var expected string
 	if err != nil {
 		t.Error(err)
 	}
@@ -19,51 +18,19 @@ func TestNewStacktrace(t *testing.T) {
 		t.Error("Stacktrace should be 4 frames.")
 	}
 
-	expected = "stacko"
-	if stacktrace[0].PackageName != expected {
-		t.Errorf("Expected stacktrace[0].PackageName == '%s'. Was: '%s'",
-			expected, stacktrace[0].PackageName)
+	var testFrame = func(frame int, v, expected string) {
+		if v != expected {
+			t.Errorf("Expected stacktrace[%d].PackageName == '%s'. Was: '%s'",
+				frame, expected, v)
+		}
 	}
 
-	expected = "NewStacktrace"
-	if stacktrace[0].FunctionName != expected {
-		t.Errorf("Expected stacktrace[0].FunctionName == '%s'. Was: '%s'",
-			expected, stacktrace[0].FunctionName)
-	}
-
-	expected = "stacko"
-	if stacktrace[1].PackageName != expected {
-		t.Errorf("Expected stacktrace[1].PackageName == '%s'. Was: '%s'",
-			expected, stacktrace[1].PackageName)
-	}
-
-	expected = "TestNewStacktrace"
-	if stacktrace[1].FunctionName != expected {
-		t.Errorf("Expected stacktrace[1].FunctionName == '%s'. Was: '%s'",
-			expected, stacktrace[1].FunctionName)
-	}
-
-	expected = "testing"
-	if stacktrace[2].PackageName != expected {
-		t.Errorf("Expected stacktrace[2].PackageName == '%s'. Was: '%s'",
-			expected, stacktrace[2].PackageName)
-	}
-
-	expected = "tRunner"
-	if stacktrace[2].FunctionName != expected {
-		t.Errorf("Expected stacktrace[2].FunctionName == '%s'. Was: '%s'",
-			expected, stacktrace[2].FunctionName)
-	}
-
-	expected = "runtime"
-	if stacktrace[3].PackageName != expected {
-		t.Errorf("Expected stacktrace[3].PackageName == '%s'. Was: '%s'",
-			expected, stacktrace[3].PackageName)
-	}
-
-	expected = "goexit"
-	if stacktrace[3].FunctionName != expected {
-		t.Errorf("Expected stacktrace[3].FunctionName == '%s'. Was: '%s'",
-			expected, stacktrace[3].FunctionName)
-	}
+	testFrame(0, stacktrace[0].PackageName, "stacko")
+	testFrame(0, stacktrace[0].FunctionName, "NewStacktrace")
+	testFrame(1, stacktrace[1].PackageName, "stacko")
+	testFrame(1, stacktrace[1].FunctionName, "TestNewStacktrace")
+	testFrame(2, stacktrace[2].PackageName, "testing")
+	testFrame(2, stacktrace[2].FunctionName, "tRunner")
+	testFrame(3, stacktrace[3].PackageName, "runtime")
+	testFrame(3, stacktrace[3].FunctionName, "goexit")
 }
