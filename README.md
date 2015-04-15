@@ -1,6 +1,4 @@
-# stacko [![Build Status](https://travis-ci.org/hallas/stacko.svg?branch=master)](https://travis-ci.org/hallas/stacko) [![GoDoc](https://godoc.org/github.com/hallas/stacko?status.svg)](https://godoc.org/github.com/hallas/stacko) [![Tips](https://img.shields.io/gratipay/hallas.svg)](https://gratipay.com/hallas)
-
-[![Join the chat at https://gitter.im/hallas/stacko](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hallas/stacko?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+# stacko [![Build Status](https://travis-ci.org/hallas/stacko.svg?branch=master)](https://travis-ci.org/hallas/stacko) [![GoDoc](https://godoc.org/github.com/hallas/stacko?status.svg)](https://godoc.org/github.com/hallas/stacko) [![Tips](https://img.shields.io/gratipay/hallas.svg)](https://gratipay.com/hallas) [![Join the chat at https://gitter.im/hallas/stacko](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/hallas/stacko?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 The Stacko project generates structured stacktraces for your Go programming
 needs.
