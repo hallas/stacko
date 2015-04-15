@@ -28,7 +28,6 @@ type Frame struct {
 // NewStacktrace generates a complete stacktrace except for those initial skip
 // frames that are skipped.
 func NewStacktrace(skip int) (Stacktrace, error) {
-
 	// Create the actual stacktrace as a slice of frames.
 	var stacktrace Stacktrace
 
@@ -92,7 +91,6 @@ func NewStacktrace(skip int) (Stacktrace, error) {
 // FunctionInfo takes a program counter and returns the function and package
 // name for the frame at that counter.
 func FunctionInfo(pc uintptr) (string, string) {
-
 	// Get the function.
 	function := runtime.FuncForPC(pc)
 	if function == nil {
